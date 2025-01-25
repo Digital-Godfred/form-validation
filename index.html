@@ -6,18 +6,34 @@
     <title>Form</title>
     <script defer src="script.js"></script>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation Form</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation Form</title>
+    <>
+        
+
 <body>
-    <div id="error"></div>
-    <form id="form" action="/" method="GET">
+    <form id="form">
         <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
         </div>
         <div>
-            <label for="passsword">Password</label>
-            <input id="password" name="password" type="password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" oninput="updatePasswordStrength(this.value)" required>
+            <div id="password-strength"></div>
         </div>
-        <button type="submit">Sign up</button>
+        <div id="error" style="color: red;"></div>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

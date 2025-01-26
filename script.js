@@ -3,7 +3,7 @@ const form = document.getElementById("form");
 const errorElement = document.getElementById("error");
 
 form.addEventListener("submit", (e) => {
-  let errorMessages = validatePassword(password.value);
+  let errorMessages = validatePassword(password);
   if (errorMessages.length > 0) {
     e.preventDefault();
     errorElement.innerText = errorMessages.join(", ");
@@ -45,6 +45,9 @@ function validatePassword(password) {
   }
   if (!/[^0-9a-zA-Z]/.test(password)) {
     messages.push("Password must contain a special character");
+  }
+  if(!password.value){
+    messages.push("Password cannot be empty");
   }
   return messages;
 }
